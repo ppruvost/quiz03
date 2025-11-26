@@ -1,0 +1,252 @@
+/* ===============================
+   STYLE GLOBAL DYS-FRIENDLY
+=============================== */
+body {
+  font-family: "Lexend", Verdana, Arial, sans-serif;
+  background: #f3f5ff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 750px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+/* ===============================
+   TITRES
+=============================== */
+h1 {
+  color: #1b2a78;
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+h1::after {
+  content: attr(data-title);
+  display: block;
+  font-size: 0.8em;
+  margin-top: 4px;
+  color: #3c4fc9;
+  opacity: 0.85;
+}
+
+h2 {
+  text-align: center;
+  color: #1b2a78;
+}
+
+/* ===============================
+   PARAGRAPHES
+=============================== */
+.intro {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   FORMULAIRE IDENTITÉ
+=============================== */
+#userForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+#userForm label {
+  font-weight: bold;
+  color: #1b2a78;
+}
+
+#userForm input {
+  padding: 12px;
+  border: 2px solid #c7d0ff;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+#userForm input:focus {
+  border-color: #1b2a78;
+  outline: none;
+}
+
+/* ===============================
+   QUESTIONS
+=============================== */
+.question {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #1b2763;
+}
+
+/* ANIMATION entrée question */
+.pop-in {
+  animation: popIn 0.45s ease;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  60% { opacity: 1; transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ===============================
+   OPTIONS (style Kahoot)
+=============================== */
+
+.options {
+  margin-top: 20px;
+}
+
+.options label.option-card {
+  display: block;
+  background: #eef1ff;
+  border: 3px solid transparent;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 1.05em;
+  position: relative;
+}
+
+/* effet hover */
+.options label.option-card:hover {
+  background: #d7ddff;
+}
+
+/* rendre visible les radios */
+input[type="radio"] {
+  transform: scale(1.5);     /* plus gros */
+  margin-right: 12px;        /* espace */
+  cursor: pointer;
+}
+
+/* ===============================
+   ANIMATIONS DE VALIDATION KAHOOT
+=============================== */
+
+/* clic → effet pulsation */
+.answer-selected {
+  animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* BONNE réponse (vert) */
+.answer-correct,
+.answer-correct-auto {
+  background: #9af5a3 !important;
+  border-color: #2b8a3e !important;
+  animation: flashGreen 0.5s ease;
+}
+
+@keyframes flashGreen {
+  0% { box-shadow: 0 0 0px rgba(43,138,62,0.1); }
+  100% { box-shadow: 0 0 18px rgba(43,138,62,0.6); }
+}
+
+/* MAUVAISE réponse (rouge) */
+.answer-wrong {
+  background: #ffb3b3 !important;
+  border-color: #c62828 !important;
+  animation: flashRed 0.5s ease;
+}
+
+@keyframes flashRed {
+  0% { box-shadow: 0 0 0px rgba(198,40,40,0.1); }
+  100% { box-shadow: 0 0 18px rgba(198,40,40,0.6); }
+}
+
+/* ===============================
+   BOUTONS
+=============================== */
+button.validate {
+    font-size: 1.4em;
+    padding: 18px 28px;
+    border-radius: 14px;
+    background: #5c7dff;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+button.validate:hover {
+    background: #455ecc;
+}
+
+.button {
+  display: inline-block;
+  width: 100%;
+  padding: 16px;
+  background: #1b2a78;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.25em;
+  cursor: pointer;
+  margin-top: 22px;
+  transition: 0.25s;
+  letter-spacing: 0.5px;
+}
+
+.button:hover {
+  background: #14205a;
+}
+
+.start { background: #5c7dff; }
+.start:hover { background: #455ecc; }
+
+.next { background: #69c77b; }
+.next:hover { background: #4ca561; }
+
+.restart { background: #ff7b72; }
+.restart:hover { background: #d85a54; }
+
+/* ===============================
+   SCORE & EXPLICATIONS
+=============================== */
+.score {
+  font-size: 1.4em;
+  color: #1b2a78;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.explication {
+  background: #eef3ff;
+  border-left: 6px solid #1b2a78;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  font-size: 1.05em;
+}
+
+/* ===============================
+   UTILITAIRES
+=============================== */
+.hidden {
+  display: none;
+}
+
+/* fade général */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
