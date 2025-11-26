@@ -1,14 +1,45 @@
 // =============================
-// Variables globales
+// GESTION DE SESSION POUR RECOMMENCER LE QUIZ
 // =============================
+
+// Lors du chargement de la page
+window.addEventListener("load", () => {
+    if (sessionStorage.getItem("quizStarted")) {
+        // L'utilisateur est revenu alors qu'une session existait → reset complet
+        resetQuizSession();
+    }
+
+    // Marque que le quiz est lancé dans cet onglet
+    sessionStorage.setItem("quizStarted", "true");
+});
+
+// Réinitialisation complète du quiz
+function resetQuizSession() {
+    sessionStorage.removeItem("quizStarted");
+    sessionStorage.removeItem("currentQuestion");
+    sessionStorage.removeItem("score");
+    sessionStorage.removeItem("shuffledQuestions");
+
+    // Retour page d’accueil du quiz (à ajuster si ton fichier a un nom différent)
+    window.location.href = "index.html";
+}
+
+
+
+/* ============================================================
+   ===============  VARIABLES GLOBALES  ========================
+   ============================================================ */
+
 let user = { nom: "", prenom: "" };
 let current = 0;
 let score = 0;
 let shuffledQuestions = [];
 
-// =============================
-// Mélange d'un tableau
-// =============================
+
+/* ============================================================
+   ===============  MÉLANGE DE TABLEAUX  =======================
+   ============================================================ */
+
 function shuffleArray(arr) {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
@@ -18,9 +49,7 @@ function shuffleArray(arr) {
     return a;
 }
 
-// =============================
-// Mélange des questions + réponses
-// =============================
+// Mélange questions + réponses
 function shuffleQuestions() {
     return questions.map((q) => ({
         ...q,
@@ -28,9 +57,11 @@ function shuffleQuestions() {
     }));
 }
 
-// =============================
-// LISTE DES QUESTIONS
-// =============================
+
+/* ============================================================
+   ====================  LISTE DES QUESTIONS  ==================
+   ============================================================ */
+
 const questions = [
   { 
     question: "1. Coût de production : C(x) = x³ − 3x² + 2x + 50. Quelle est la dérivée C'(x) ?", 
@@ -173,9 +204,11 @@ const questions = [
   }
 ];
 
-// =============================
-// AFFICHAGE D'UNE QUESTION
-// =============================
+
+/* ============================================================
+   =================== AFFICHAGE D'UNE QUESTION ================
+   ============================================================ */
+
 function showQuestion() {
     const question = shuffledQuestions[current];
 
@@ -198,9 +231,11 @@ function showQuestion() {
     `;
 }
 
-// =============================
-// VALIDATION
-// =============================
+
+/* ============================================================
+   ======================== VALIDATION =========================
+   ============================================================ */
+
 function validateAnswer() {
     const selected = document.querySelector(`input[name="q${current}"]:checked`);
 
@@ -248,18 +283,22 @@ function validateAnswer() {
     }, 300);
 }
 
-// =============================
-// FIN DU QUIZ
-// =============================
+
+/* ============================================================
+   ======================== FIN DU QUIZ ========================
+   ============================================================ */
+
 function endQuiz() {
     document.getElementById("quiz").innerHTML = `
         <h2>Quiz terminé !</h2>
         <p>Score final : ${score} / ${shuffledQuestions.length}</p>`;
 }
 
-// =============================
-// LANCEMENT DU QUIZ
-// =============================
+
+/* ============================================================
+   ====================== LANCEMENT DU QUIZ ====================
+   ============================================================ */
+
 document.getElementById("startQuiz").addEventListener("click", () => {
     const nom = document.getElementById("nom").value.trim();
     const prenom = document.getElementById("prenom").value.trim();
