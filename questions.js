@@ -33,143 +33,143 @@ function shuffleQuestions() {
 // =============================
 const questions = [
   { 
-    question: "1. La vitesse linéaire en usinage (Vc) dépend de :", 
-    options: ["N uniquement", "D uniquement", "D et N", "fz et Z"], 
-    bonne_reponse: "D et N", 
-    explication: "Vc = π × D × N / 1000 : elle dépend du diamètre et de la vitesse de rotation." 
+    question: "1. Coût de production : C(x) = x³ − 3x² + 2x + 50. Quelle est la dérivée C'(x) ?", 
+    options: ["3x² − 6x + 2", "x² − 6x + 2", "3x² − 3x + 2", "3x² − 6x"], 
+    bonne_reponse: "3x² − 6x + 2", 
+    explication: "On dérive terme par terme : (x³)'=3x², (−3x²)'=−6x, (2x)'=2, la constante disparaît." 
   },
 
   { 
-    question: "2. La relation correcte entre la vitesse linéaire Vc, le diamètre D et la fréquence de rotation N est :", 
-    options: ["Vc = D / N", "Vc = π × D × N / 1000", "Vc = N / (π × D)", "Vc = D × 1000 / N"], 
-    bonne_reponse: "Vc = π × D × N / 1000", 
-    explication: "C’est la formule fondamentale utilisée en usinage." 
+    question: "2. Satisfaction client : S(x) = −x³ + 6x² − 9x + 80. Calculer S'(2).", 
+    options: ["−3", "3", "6", "0"], 
+    bonne_reponse: "3", 
+    explication: "S'(x)=−3x² + 12x − 9. Pour x=2 : −12 + 24 − 9 = 3." 
   },
 
   { 
-    question: "3. Si le diamètre de l'outil augmente pour une même vitesse de rotation N, la vitesse de coupe Vc doit :", 
-    options: ["Augmenter", "Rester identique", "Diminuer", "Devenir nulle"], 
-    bonne_reponse: "Diminuer", 
-    explication: "Un grand diamètre génère naturellement plus de vitesse linéaire." 
+    question: "3. Production journalière : P(x) = 2x³ − 9x² + 12x + 200. Que vaut P'(1) ?", 
+    options: ["0", "5", "−2", "3"], 
+    bonne_reponse: "0", 
+    explication: "P'(x)=6x² − 18x + 12. Pour x=1 : 6 − 18 + 12 = 0." 
   },
 
   { 
-    question: "4. La fréquence de rotation f en Hz est :", 
-    options: ["N × 60", "N / 60", "N × 2π", "1/N"], 
-    bonne_reponse: "N / 60", 
-    explication: "1 Hz = 1 tour par seconde : f = N(tr/min)/60." 
+    question: "4. Flux logistique : F(x) = −2x³ + 12x² − 18x + 100. Solutions de F'(x)=0 ?", 
+    options: ["x=1 et x=3", "x=−1 et x=2", "x=2 et x=4", "x=0 et x=3"], 
+    bonne_reponse: "x=1 et x=3", 
+    explication: "F'(x)=−6(x−1)(x−3). Les racines sont x=1 et x=3." 
   },
 
   { 
-    question: "5. La relation entre ω et f est :", 
-    options: ["ω = f", "ω = f/2π", "ω = 2πf", "ω = f × 60"], 
-    bonne_reponse: "ω = 2πf", 
-    explication: "Un tour = 2π radians." 
+    question: "5. Temps de traitement : T(x)=x³ + 3x² − 9x + 20. Calculer T'(1).", 
+    options: ["−1","0","1","3"], 
+    bonne_reponse: "0", 
+    explication: "T'(x)=3x² + 6x − 9 → T'(1)=3+6−9=0." 
   },
 
   { 
-    question: "6. La vitesse linéaire v d’un point en mouvement circulaire est :", 
-    options: ["v = ω × r", "v = ω / r", "v = r / ω", "v = 2πr / ω"], 
-    bonne_reponse: "v = ω × r", 
-    explication: "Relation fondamentale du mouvement circulaire." 
+    question: "6. Recette : R(x)=x³ − x² − x + 50. Que vaut R'(1) ?", 
+    options: ["1","0","−1","2"], 
+    bonne_reponse: "0", 
+    explication: "R'(x)=3x² − 2x − 1 → R'(1)=3−2−1=0." 
   },
 
   { 
-    question: "7. Une broche tourne à 1800 tr/min. La fréquence vaut :", 
-    options: ["15 Hz", "20 Hz", "30 Hz", "60 Hz"], 
-    bonne_reponse: "30 Hz", 
-    explication: "f = 1800/60 = 30 Hz." 
+    question: "7. Satisfaction : S(x)=−x³ + 3x² + x + 60. Calculer S'(3).", 
+    options: ["−8","8","0","5"], 
+    bonne_reponse: "−8", 
+    explication: "S'(3)=−27+18+1=−8." 
   },
 
   { 
-    question: "8. En atelier, augmenter trop fortement N pour un outil ou un matériau non adapté provoque :", 
-    options: ["Un meilleur état de surface", "Un échauffement et une casse outil", "Un enlèvement de matière plus doux", "Aucun effet"], 
-    bonne_reponse: "Un échauffement et une casse outil", 
-    explication: "La Vc devient trop élevée, l’outil brûle ou se casse." 
+    question: "8. Stock : I(x)=x³ − 6x² + 11x + 30. Calculer I'(2).", 
+    options: ["−1","1","0","2"], 
+    bonne_reponse: "−1", 
+    explication: "I'(2)=12−24+11=−1." 
   },
 
   { 
-    question: "9. Convertir 240 tr/min en Hz :", 
-    options: ["2 Hz", "4 Hz", "6 Hz", "8 Hz"], 
-    bonne_reponse: "4 Hz", 
-    explication: "240/60 = 4 Hz." 
+    question: "9. Contrôle qualité : Q(x)=2x³ − 3x² − 12x + 40. Racines de Q'(x) ?", 
+    options: ["x=−1 et x=2","x=1 et x=3","x=−2 et x=1","x=2 seulement"], 
+    bonne_reponse: "x=−1 et x=2", 
+    explication: "Q'(x)=6(x−2)(x+1)." 
   },
 
   { 
-    question: "10. Une fz trop faible combinée à une grande vitesse de rotation entraîne :", 
-    options: ["Une coupe franche", "Un frottement au lieu d’une coupe", "Une vibration atténuée", "Un enlèvement de copeaux optimal"], 
-    bonne_reponse: "Un frottement au lieu d’une coupe", 
-    explication: "fz trop faible = la dent glisse, chauffe et use l’outil." 
+    question: "10. Organisation RH : W(x)=−x³ + 9x² − 24x + 30. Où la fonction décroît-elle ?", 
+    options: ["[0;2[ et ]4;6]","[2;4]","[0;6]","]2;4["], 
+    bonne_reponse: "[0;2[ et ]4;6]", 
+    explication: "W'(x)=−3(x−2)(x−4) négative avant 2 et après 4." 
   },
 
   { 
-    question: "11. Si N est trop faible pour un petit diamètre d’outil, on observe :", 
-    options: ["Une coupe trop agressive", "Une absence de coupe (frottement, bruit)", "Un arrachement du porte-outil", "Une vitesse de coupe excessive"], 
-    bonne_reponse: "Une absence de coupe (frottement, bruit)", 
-    explication: "Petit D = il faut une grande vitesse angulaire." 
+    question: "11. Dossier client : f(x)=x³ − 4x² + 4x + 10. Points critiques ?", 
+    options: ["x=2 et x=2/3","x=−1 et x=3","x=1 et x=4","x=0 et x=2"], 
+    bonne_reponse: "x=2 et x=2/3", 
+    explication: "Δ=16 → racines 2 et 2/3." 
   },
 
   { 
-    question: "12. Quelle grandeur augmente si on augmente f ?", 
-    options: ["La vitesse linéaire Vc", "Le diamètre", "La période T", "La masse de la pièce"], 
-    bonne_reponse: "La vitesse linéaire Vc", 
-    explication: "Vc ∝ N donc ∝ f." 
+    question: "12. Temps machine : T(x)=2x³ − 12x² + 18x + 5. Solutions de T'(x)=0 ?", 
+    options: ["x=1 et x=3","x=2 et x=4","x=0 et x=2","x=−1 et x=3"], 
+    bonne_reponse: "x=1 et x=3", 
+    explication: "T'(x)=6(x−1)(x−3)." 
   },
 
   { 
-    question: "13. Mise en sécurité : avant de modifier N sur la machine, il faut :", 
-    options: ["Rotation max", "Arrêter la broche", "Approcher l’outil", "Serrer l’étau"], 
-    bonne_reponse: "Arrêter la broche", 
-    explication: "Changer N en rotation est dangereux." 
+    question: "13. Satisfaction : S(x)=−x³ + 4x² + x + 20. Calculer S'(2).", 
+    options: ["5","−5","0","3"], 
+    bonne_reponse: "5", 
+    explication: "S'(2)=−12+16+1=5." 
   },
 
   { 
-    question: "14. Une roue de 100 mm à 600 tr/min. Vc vaut :", 
-    options: ["3 m/min", "60 m/min", "188 m/min", "600 m/min"], 
-    bonne_reponse: "188 m/min", 
-    explication: "Vc = π×0.1×600 ≈ 188 m/min." 
+    question: "14. Coût marginal : PC(x)=x³ − 2x² − x + 10. Calculer PC'(3).", 
+    options: ["14","10","0","8"], 
+    bonne_reponse: "14", 
+    explication: "PC'(3)=27−12−1=14." 
   },
 
   { 
-    question: "15. Si T = 0,1 s, f vaut :", 
-    options: ["2 Hz", "5 Hz", "10 Hz", "20 Hz"], 
-    bonne_reponse: "10 Hz", 
-    explication: "f = 1/T." 
+    question: "15. Stock critique : I(x)=−2x³ + 9x² − 1x + 50. Calculer I'(1).", 
+    options: ["11","−11","0","5"], 
+    bonne_reponse: "11", 
+    explication: "I'(1)=−6+18−1=11." 
   },
 
   { 
-    question: "16. Unité de ω ?", 
-    options: ["m/s", "tr/min", "rad/s", "Hz"], 
-    bonne_reponse: "rad/s", 
-    explication: "ω en radians par seconde." 
+    question: "16. Flux logistique : F(x)=x³ − 9x² + 24x + 10. F'(x) ?", 
+    options: ["3x² − 18x + 24","x² − 18x + 24","3x² − 9x + 24","3x² − 18x + 10"], 
+    bonne_reponse: "3x² − 18x + 24", 
+    explication: "Dérivation terme par terme." 
   },
 
   { 
-    question: "17. Diminuer trop N pour un grand D entraîne :", 
-    options: ["Vc trop faible", "Vc trop élevée", "Coupe agressive", "Instabilité"], 
-    bonne_reponse: "Vc trop faible", 
-    explication: "La pièce ne coupe plus." 
+    question: "17. Contrôle qualité : C(x)=−x³ + 3x² + 9x + 40. C'(3) ?", 
+    options: ["0","9","−9","3"], 
+    bonne_reponse: "0", 
+    explication: "C'(3)=−27+18+9=0." 
   },
 
   { 
-    question: "18. Fraise D=10 mm, Vc=80 m/min → N ?", 
-    options: ["200 tr/min", "800 tr/min", "1600 tr/min", "2500 tr/min"], 
-    bonne_reponse: "2500 tr/min", 
-    explication: "≈2546 tr/min." 
+    question: "18. Livraison : D(x)=2x³ − 15x² + 36x + 5. Racines de D'(x) ?", 
+    options: ["x=2 et x=3","x=1 et x=4","x=−1 et x=3","x=0 et x=6"], 
+    bonne_reponse: "x=2 et x=3", 
+    explication: "D'(x)=6(x−2)(x−3)." 
   },
 
   { 
-    question: "19. Relier N et ω :", 
-    options: ["ω = 2π × (N/60)", "ω = N×60", "ω = πN", "ω = N/(2π)"], 
-    bonne_reponse: "ω = 2π × (N/60)", 
-    explication: "Tours/min → tours/s → radians." 
+    question: "19. Efficience : E(x)=−x³ + 6x² − 9x + 15. Calculer E'(2).", 
+    options: ["3","−3","0","6"], 
+    bonne_reponse: "3", 
+    explication: "E'(2)=−12+24−9=3." 
   },
 
   { 
-    question: "20. Une Vc trop faible entraîne :", 
-    options: ["Échauffement important", "Casse outil immédiate", "Mauvais état de surface", "Coupe impossible"], 
-    bonne_reponse: "Mauvais état de surface", 
-    explication: "Copeaux mal formés." 
+    question: "20. Modélisation : M(x)=x³ − x² + 4x + 8. M'(x) ?", 
+    options: ["3x² − 2x + 4","x² − 2x + 4","3x² − x + 4","3x² − 2x"], 
+    bonne_reponse: "3x² − 2x + 4", 
+    explication: "Dérivée : 3x² − 2x + 4." 
   }
 ];
 
