@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz - Gestion administrative (Terminale AGORA)</title>
+
+  <!-- Police DYS-friendly -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Confettis -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <h1 data-title="Fonctions polynômes de degré 3">
+      Application au contexte professionnel
+    </h1>
+
+    <p class="intro">Testez vos connaissances avec le quiz interactif !</p>
+
+    <!-- Formulaire identité -->
+    <div id="userForm">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" placeholder="Entrez votre nom" required>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" placeholder="Entrez votre prénom" required>
+
+      <button class="button start" id="startQuiz">🎮 Commencer le quiz</button>
+    </div>
+    
+     <!-- SON PENDANT LE QUIZ -->
+    <audio id="bgMusic" src="musique.mp3" loop></audio>
+    
+    <!-- ZONE DU QUIZ -->
+    <div id="quiz" class="hidden"></div>
+
+    <div id="explication" class="explication"></div>
+    <p id="score" class="score"></p>
+  </div>
+
+  <!-- SON DE VICTOIRE -->
+  <audio id="victorySound" src="jingle.wav" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="questions.js"></script>
+  <script src="quiz.js"></script>
+  <script src="envoi.js"></script>
+</body>
+</html>
+
