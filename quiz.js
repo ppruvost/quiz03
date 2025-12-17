@@ -168,9 +168,9 @@ function validateAnswer() {
         current++;
 
         if (current < shuffledQuestions.length) {
-            setTimeout(showQuestion, 2500);
+            setTimeout(showQuestion, 10000);
         } else {
-            setTimeout(endQuiz, 2500);
+            setTimeout(endQuiz, 10000);
         }
     }, 300);
 }
